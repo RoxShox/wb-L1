@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.form {
+				display: flex;
+				flex-direction: column;
+				max-width: 700px;
+				width: 100%;
+				margin: 0 auto;
+				height: 100vh;
+				justify-content: center;
+				row-gap: 30px;
+			}
+			.form label {
+				display: flex;
+			}
+			.form label span {
+				width: 205px;
+				margin-right: 55px;
+				font-size: 24px;
+				font-weight: 500;
+			}
+			.form input,
+			.form select {
+				flex-grow: 1;
+				border: 1px solid black;
+				border-radius: 6px;
+				padding: 10px 15px;
+				background-color: transparent;
+				color: black;
+				font-family: inherit;
+				font-size: inherit;
+				font-weight: 300;
+			}
+			.form button {
+				display: block;
+				min-width: 210px;
+				border: 2px solid transparent;
+				border-radius: 6px;
+				cursor: pointer;
+				padding: 9px 15px;
+				color: #000000;
+				font-size: 18px;
+				font-weight: 300;
+				font-family: inherit;
+				transition: background-color 0.2s linear;
+			}
+			.hidden {
+				opacity: 0;
+				transition: 0.3s;
+				visibility: hidden;
+			}
+			.loader {
+				text-align: center;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="form-wrap">
+			<form class="form">
+				<label>
+					<span>Ваше имя:</span>
+					<input
+						type="text"
+						name="name"
+						id="name"
+						placeholder="Илон Маск"
+						required
+						autofocus
+					/>
+				</label>
+
+				<label>
+					<span>Почта:</span>
+					<input
+						type="email"
+						name="email"
+						id="email"
+						placeholder="elon@musk.com"
+						required
+					/>
+				</label>
+
+				<label>
+					<span>Возраст:</span>
+					<input type="number" name="age" required />
+				</label>
+
+				<label>
+					<span>Профессия:</span>
+					<select name="specialization" required>
+						<option value="engineer" selected>Инженер</option>
+						<option value="scientist">Учёный</option>
+						<option value="psychologist">Психолог</option>
+						<option value="other">Другая</option>
+					</select>
+				</label>
+
+				<button type="submit">Отправить заявку</button>
+				<div id="loader" class="loader hidden">Отправляем...</div>
+			</form>
+		</div>
+		<script src="./task29.js"></script>
+	</body>
+</html>
